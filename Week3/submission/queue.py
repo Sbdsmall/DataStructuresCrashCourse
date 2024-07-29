@@ -3,11 +3,13 @@ from queue_interface import QueueInterface
 
 
 
-class MyQueue(QueueInterface):
+class LinkedQueue(QueueInterface):
     def __init__(self, node: 'LinkedNode' = LinkedNode()):
         self.head = node
         self.tail = self.head
         self.size = 0
+        if(self.head.data != None):
+            self.size = 1
     def dequeue(self):
         # should remove the item from the top of the queue
         if (self.is_empty()):
@@ -33,7 +35,7 @@ class MyQueue(QueueInterface):
         self.size += 1
     
     def is_empty(self):
-        if (self.size() == 0):
+        if (self.size == 0):
             return True
         
         return False
@@ -46,6 +48,15 @@ class MyQueue(QueueInterface):
             counter += 1
             sizeQueue = sizeQueue.get_next()
         return counter
-    
 
-    testQueue = MyQueue(LinkedNode(5))
+
+testQueue = LinkedQueue(LinkedNode(5))
+print(testQueue.size)
+testQueue.enqueue(20)
+print(testQueue.size)
+print(testQueue.is_empty())
+testQueue.dequeue()
+print(testQueue.size)
+testQueue.dequeue()
+print(testQueue.is_empty())
+testQueue.dequeue()
