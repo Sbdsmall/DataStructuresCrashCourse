@@ -1,5 +1,5 @@
 class LinkedNode:
-    def __init__(self, data, next_node=None):
+    def __init__(self, data=None, next_node=None):
         """
         Create a new LinkedNode with the given data object and next node.
 
