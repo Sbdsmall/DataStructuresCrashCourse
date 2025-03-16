@@ -1,19 +1,19 @@
 # Big O Basic Concepts:
-1. O(1): Constant Time
-1. Doesn't depend on the size of the data set.
-1. Example: Accessing an array element by its index.
+1. ** O(1): Constant Time **
+    - Doesn't depend on the size of the data set.
+    - Example: Accessing an array element by its index.
 1. O(log n): Logarithmic Time
-1. Splits the data in each step (divide and conquer).
-1. Example: Binary search.
+    - Splits the data in each step (divide and conquer).
+    - Example: Binary search.
 1. O(n): Linear Time
-1. Directly proportional to the data set size.
-1. Example: Looping through an array.
+    - Directly proportional to the data set size.
+    - Example: Looping through an array.
 1. O(n log n): Linearithmic Time
-1. Splits and sorts or searches data.
-1. Example: Merge sort, quick sort.
+    - Splits and sorts or searches data.
+    - Example: Merge sort, quick sort.
 1. O(n2): Polynomial Time
-1. Nested loops for each power of n.
-1. Example: Bubble sort (O(n2)).
+    - Nested loops for each power of n.
+    - Example: Bubble sort (O(n2)).
 ## Omega (Ω) - Lower Bound
 1. What it means: Omega (Ω) describes the best-case scenario for an algorithm.
 1. In simple terms: It tells you the fastest an algorithm can run in the best
