@@ -59,14 +59,27 @@ class LinkedListPop extends LinkedList{
 	/////////////////////////////
     
     pop(): Node | null {
-        const poppedNode = this.tail;
         if (!this.head) {
             console.log("There is no data in this linked list")
             return null
-        } else {
+        } 
+        let newTail = this.head;
+        let poppedNode = this.head;
 
+        while(poppedNode.next) {
+            newTail = poppedNode
+            poppedNode = poppedNode.next
         }
-        return poppedNode
+
+        this.tail = newTail
+        this.tail.next = null;
+        this.length--;
+        
+        if(this.length === 0) {
+            this.head = null;
+            this.tail = null
+        }
+        return poppedNode;
     }
  }
  
@@ -76,22 +89,24 @@ class LinkedListPop extends LinkedList{
     myLinkedList.push(2);
 
     // (2) Items in LL - Returns 2 Node
-    if (myLinkedList.length !== 0) {
-        console.log(myLinkedList.pop().value);
+    if (myLinkedList !== null && myLinkedList.length !== 0) {
+        console.log('val: ', myLinkedList.pop()?.value);
     } else {
         console.log("null");
     }
 
     // (1) Item in LL - Returns 1 Node
     if (myLinkedList.length !== 0) {
-        console.log(myLinkedList.pop().value);
+        console.log('val: ', myLinkedList.pop()?.value);
     } else {
         console.log("null");
     }
 
     // (0) Items in LL - Returns null
     if (myLinkedList.length !== 0) {
-        console.log(myLinkedList.pop().value);
+        console.log('val: ', myLinkedList.pop()?.value);
+                myLinkedList.getLength()
+
     } else {
         console.log("null");
     }
