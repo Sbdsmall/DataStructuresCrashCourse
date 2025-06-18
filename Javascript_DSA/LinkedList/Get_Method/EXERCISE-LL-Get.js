@@ -143,5 +143,5 @@ class LinkedList {
     EXPECTED OUTPUT:
     ----------------
     3
-
+    12
 */

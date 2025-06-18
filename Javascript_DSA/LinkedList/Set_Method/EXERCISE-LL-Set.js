@@ -118,7 +118,13 @@ class LinkedList {
 	//                         //
 	//                         //
 	/////////////////////////////
- 
+    set(index, value) {
+        let curNode = this.get(index)
+
+        if(curNode) {
+            curNode.value = value
+        }
+    }
 }
  
 
