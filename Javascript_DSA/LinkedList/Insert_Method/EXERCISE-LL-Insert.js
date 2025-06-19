@@ -127,7 +127,58 @@ class LinkedList {
 	//                            //
 	//                            //
 	////////////////////////////////
+    insert(index, value) {
+    // My Overcomplicated solution that passes (may be wrong in an edge case somewhere)
+      /*  if (index < 0 || index > this.length){
+            console.log('Index out of bounds')
+            return undefined
+        }
+        let newNode = new Node(value);
 
+        if (index === 0 ){
+            newNode.next = this.head;
+            this.head = newNode;
+            this.length++;
+
+            return true;
+        }
+        let prevNode = this.head;
+        let currNode = this.head;
+
+        for(let idx = 0; idx < index; idx++) {
+            prevNode = currNode;
+            currNode = currNode.next;
+
+            // Incorrect edge case here. Not setting "this.tail" to incase of last index
+            if (idx + 1 === index) {
+                newNode.next = currNode;
+                prevNode.next = newNode;
+                this.length++;
+                return true;
+            }
+        }
+        return false */
+
+        // CLEANER and CORRECT Solution
+        if (index < 0 || index > this.length) {
+            return false
+        }
+        if (index === 0) {
+            return this.unshift(value);
+        }
+        if (index === this.length) {
+            return this.push(value);
+        }
+
+        let newNude = new Node(value);
+        let prevNude = this.get(index - 1);
+
+        newNude.next = prevNude.next;
+        prevNude.next = newNude;
+        this.length++;
+        
+        return true;
+    }
 }
 
 

@@ -140,7 +140,25 @@ class LinkedList {
 	//                            //
 	//                            //
 	////////////////////////////////
+    remove(index) {
+        if(index < 0 || index > this.length) {
+            console.log('index out of bounds');
+            return undefined;
+        }
+        if (index === 0) {
+            return this.shift();
+        }
+        if (index === this.length - 1) {
+            return this.pop();
+        }
 
+        const prevNode = this.get(index - 1);
+        const currNode = this.get(index)
+        prevNode.next = currNode.next;
+        this.length--;
+
+        return currNode;
+    }
 }
 
 

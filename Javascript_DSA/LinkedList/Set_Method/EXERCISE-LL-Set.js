@@ -123,7 +123,9 @@ class LinkedList {
 
         if(curNode) {
             curNode.value = value
+            return true;
         }
+        return false;
     }
 }
  
