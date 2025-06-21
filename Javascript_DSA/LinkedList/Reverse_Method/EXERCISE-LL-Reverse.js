@@ -154,7 +154,25 @@ class LinkedList {
 	//                             //
 	//                             //
 	///////////////////////////////// 
+    reverse() {
 
+        let temp = this.head;
+        this.head = this.tail;
+        this.tail = temp;
+
+
+        let prevNode = null;
+        let nextNode = temp.next;
+
+        for (let idx = 0; idx < this.length; idx++) {
+            nextNode = temp.next;
+            temp.next = prevNode;
+            prevNode = temp;
+            temp = nextNode;
+        }
+
+        return this;
+    }
 }
 
 
