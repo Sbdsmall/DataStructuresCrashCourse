@@ -1,2 +1,2 @@
 # DataStructuresCrashCourse
-Going through Georgia Tech course without getting a degree for it....
+Going through Georgia Tech's course on Data Structures and Algorithms
